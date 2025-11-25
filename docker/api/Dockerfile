@@ -16,6 +16,11 @@ RUN apk --no-cache add \
     gcc \
     musl-dev && \
     rm -rf /var/cache/apk/*
+    
+# 配置 pip 国内镜像源并安装 Ansible (使用最新稳定版, 兼容 Python 3.12)
+RUN pip3 config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
+    pip3 config set install.trusted-host mirrors.aliyun.com && \
+    pip3 install --no-cache-dir ansible-core==2.15.12 --break-system-packages
 
 # 设置时区
 ENV TZ=Asia/Shanghai
