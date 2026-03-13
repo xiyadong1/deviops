@@ -146,7 +146,7 @@ DevOps运维管理系统优势：
 </details>
 
 ### 测试环境
-https://deviops.cn/login
+https://autoops.com.cn/   
 账号：test
 密码：123456
 ### 视频安装使用介绍
@@ -159,46 +159,11 @@ docker一键安装
 [docker部署文档](docker/README.md)
 #### 拉取镜像(可选,首次部署会自动拉取)
 ```bash
-docker pull crpi-aj3vgoxp9kzh2jx4.cn-hangzhou.personal.cr.aliyuncs.com/zhangfan_k8s/deviops-api:v1.0
-docker pull crpi-aj3vgoxp9kzh2jx4.cn-hangzhou.personal.cr.aliyuncs.com/zhangfan_k8s/deviops-web:v1.0
-docker pull crpi-aj3vgoxp9kzh2jx4.cn-hangzhou.personal.cr.aliyuncs.com/zhangfan_k8s/pushgateway:v1.9.0
-docker pull crpi-aj3vgoxp9kzh2jx4.cn-hangzhou.personal.cr.aliyuncs.com/zhangfan_k8s/redis:7.0-alpine
-docker pull crpi-aj3vgoxp9kzh2jx4.cn-hangzhou.personal.cr.aliyuncs.com/zhangfan_k8s/prometheus:v2.47.0
-docker pull crpi-aj3vgoxp9kzh2jx4.cn-hangzhou.personal.cr.aliyuncs.com/zhangfan_k8s/mysql:8.0.33
-```
-AutoOps v2 版本更新方法
-```bash
-#拉取v2.0版本镜像
-docker pull crpi-aj3vgoxp9kzh2jx4.cn-hangzhou.personal.cr.aliyuncs.com/zhangfan_k8s/deviops-api:v2.0
-docker pull crpi-aj3vgoxp9kzh2jx4.cn-hangzhou.personal.cr.aliyuncs.com/zhangfan_k8s/deviops-web:v2.0
-#停止v1.0版本,删除本地镜像
-docker stop  devops-web devops-api  && docker rm  devops-web devops-api
-docker rmi     IMAGE ID
-#修改镜像tag标签
-docker tag  xxx/deviops-api:v2.0  xxxxx/deviops-api:v1.0
-docker tag  xxx/deviops-web:v2.0  xxxxx/deviops-web:v1.0
-#启动服务
-docker up -d #启动服务
+# 脚本+镜像版本+ip+前端端口
+cd /root/deviops/docker
+./devops-start.sh  v3.0 ip 8080
 ```
 
-### 修改配置文件
-```bash
-* git clone https://github.com/zhang1024fan/deviops.git
-* cd  deviops/docker
-
-vim  api/config.yaml
-
-  # 本地ip地址(替换为实际的外网IP或域名)
-  imageHost: "http://192.168.2.123:8088"
-# 监控配置
-monitor:
-  prometheus:
-    url: "http://192.168.2.123:9090"
-  pushgateway:
-    url: "http://192.168.2.123:9091"
-  agent:
-    heartbeat_server_url: "http://192.168.2.123:8000/api/v1/monitor/agent/heartbeat"
-```
 
 ```bash
 docker-compose up -d
@@ -207,27 +172,26 @@ docker-compose ps
 ### 3. 查看服务日志
 docker-compose logs -f
 ### 4.访问服务
-Web 前端: http://localhost:8088
+Web 前端: http://localhost:8080
 默认账号: admin / 123456
 ```
-### 升级说明
-1. 目前更新会替换原来的镜像。
-2. 删除本地的镜像。docker stop  deviops-api  deviops-web  && docker rm  deviops-api  deviops-web
-3. docker-compose up -d  #会重新拉取最新镜像
 
 
 ## 感谢以下同学对本项目提供的打赏
 
 <p align="center">
-  <img src="assets/image.png" width="120" />
-  <img src="assets/image-1.png" width="120" />
-  <img src="assets/image-2.png" width="120" />
-  <img src="assets/image-3.png" width="120" />
-  <img src="assets/image-4.png" width="120" />
-  <img src="assets/image-5.png" width="120" />
-  <img src="assets/image-6.png" width="120" />
-  <img src="assets/image-7.png" width="120" />
-  <img src="assets/image-8.png" width="120" />
+  <img src="assets/zanzhu/1.png" width="120" />
+  <img src="assets/zanzhu/4.png" width="120" />
+  <img src="assets/zanzhu/5.png" width="120" />
+  <img src="assets/zanzhu/6.png" width="120" />
+  <img src="assets/zanzhu/7.png" width="120" />
+  <img src="assets/zanzhu/8.png" width="120" />
+  <img src="assets/zanzhu/9.png" width="120" />
+  <img src="assets/zanzhu/10.png" width="120" />
+  <img src="assets/zanzhu/11.png" width="120" />
+  <img src="assets/zanzhu/12.png" width="120" />
+  <img src="assets/zanzhu/13.png" width="120" />
+  <img src="assets/zanzhu/14.png" width="120" />
 </p>
 
 ## 联系作者
