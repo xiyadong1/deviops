@@ -15,8 +15,8 @@
 | | 云密钥管理 | ✅ |
 | | 主机终端管理 | ✅ |
 | | 五类数据库管理(MySQL/PgSQL/Redis/ES/MongoDB) | ✅ |
-| | windos 主机管理 | 🚧规划中 |
-| | windos 远程桌面-guacamole | 🚧规划中 |
+| | windows 主机管理 | 🚧规划中 |
+| | windows 远程桌面-guacamole | 🚧规划中 |
 | | 交换机配置管理  | 🚧规划中 |
 | **Kubernetes集群管理** | 多集群管理 | ✅ |
 | | 节点管理 | ✅ |
@@ -161,7 +161,7 @@ docker一键安装
 ```bash
 # 脚本+镜像版本+ip+前端端口
 cd /root/deviops/docker
-./devops-start.sh  v3.0 ip 8080
+./devops-start.sh  v4.0   ip     8080
 ```
 
 
@@ -197,7 +197,8 @@ Web 前端: http://localhost:8080
 ## 联系作者
 
 ## 技术交流+社区
-
+- 微信技术交流: zf5391621
+- 建议邮箱: zfwh1024@163.com
 <img src="assets/zf.jpg" width="300" />
 
 #### 加群技术交流
