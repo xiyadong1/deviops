@@ -21,6 +21,8 @@ db:
   # 最大连接数
   maxOpen: 150
 
+license:
+  enabled: false
 # redis配置
 redis:
   address: redis:6379
